@@ -5,6 +5,10 @@ Leveraging the ResNet50 architecture with transfer learning, our sys-tem incorpo
 data augmentation, and custom layers optimized for binary classification. With its robust design and non-invasive approach,
 this system offers a scalable and cost-effective solution for real-time skin disease diagnosis, bridging the gap between traditional and AI-driven healthcare solutions.
 
+------------------MODEL ARCHITECTURE--------------------
+![Uploading image.png…]()
+
+
 -------METHODOLOGY-------
 The methodology adopted in this study consists of the following key steps:
 1.	Preprocessing for dataset augmentation and balancing.
