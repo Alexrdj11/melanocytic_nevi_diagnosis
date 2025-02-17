@@ -16,6 +16,8 @@ The methodology adopted in this study consists of the following key steps:
 To ensure effective training, the raw dataset was preprocessed by resizing all images to a resolution of 224x224 pixels,
 standardizing the input size for the ResNet50 model. Data augmentation techniques, such as rotation, flipping, and zooming,
 were applied as shown in Fig. 2. to introduce variability and mitigate overfitting. Class imbalance was addressed by calculating class weights and ap-plying them during model training.
+![image](https://github.com/user-attachments/assets/e207db2c-270d-48be-9422-90524e8eb45d)
+
 
 2. Transfer Learning for Feature Extraction--->
 We employed the ResNet50 architecture, pre-trained on the ImageNet
