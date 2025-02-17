@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skin Disease Prediction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Funnel+Display:wght@300..800&family=Hubot+Sans:ital,wght@0,200..900;1,200..900&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .font-hubot {
+        font-family: "Funnel Display", serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- <h1 class="text-3xl font-bold">
+        Hello world!
+      </h1>
+    <h1>Skin Disease Classification</h1>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <label for="image">Choose an image file:</label>
+        <input type="file" id="image" name="image" accept="image/*" required>
+        <button type="submit">Upload and Predict</button>
+    </form> -->
+
+    <div class="bg-slate-950 container min-h-screen">
+      <h1 class="text-stone-300 text-5xl text-center font-hubot p-24">
+        Skin Disease Detection using Deep Learning
+        <span
+          class="mt-5 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-slate-500 relative inline-block"
+        >
+          <span class="relative text-slate-950">Melanocytic Nevi</span>
+        </span>
+      </h1>
+      <div
+        class="w-4/12 h-2/5 bg-slate-500 rounded-lg mx-auto flex flex-col items-center justify-center text-center"
+      >
+        <form
+          action="/upload"
+          method="POST"
+          enctype="multipart/form-data"
+          class="flex flex-col items-center"
+        >
+          <label
+            class="text-slate-950 font-hubot text-4xl mb-10 mt-10"
+            for="image"
+          >
+            Choose an image file:
+          </label>
+          <!-- <input type="file" id="image" name="image" accept="image/*" required class="mb-2"> -->
+          <input
+            type="file"
+            id="image"
+            name="image"
+            accept="image/*"
+            required
+            class="file:mr-3 file:py-3 file:px-4 file:border-0 border border-slate-950 rounded-full file:bg-slate-950 file:text-stone-300 hover:file:bg-slate-900"
+          />
+          <button
+            class="bg-slate-950 rounded-full px-10 py-4 mb-10 mt-10 text-stone-300"
+            type="submit"
+          >
+            Upload and Predict
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- <div class="flex h-[100vh] w-[100vw] flex-col items-center justify-center bg-slate-950 text-white">
+        <div class="card-wrapper h-[200px] w-[200px]">
+          <div class="card-content flex items-center justify-center text-xs">
+            <div class="max-w-[60%] text-center">Check out <a href="https://youtube.com/@codinglyio" class="font-semibold underline" target="_blank">Codingly</a> on YouTube</div>
+          </div>
+        </div>
+      </div> -->
+  </body>
+</html>
