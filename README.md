@@ -6,8 +6,8 @@ data augmentation, and custom layers optimized for binary classification. With i
 this system offers a scalable and cost-effective solution for real-time skin disease diagnosis, bridging the gap between traditional and AI-driven healthcare solutions.
 
 ------------------MODEL ARCHITECTURE--------------------
-![Uploading image.png…]()
 
+![image](https://github.com/user-attachments/assets/88c6b07b-a9fc-4a3b-ad63-77b8a901fb36)
 
 -------METHODOLOGY-------
 The methodology adopted in this study consists of the following key steps:
