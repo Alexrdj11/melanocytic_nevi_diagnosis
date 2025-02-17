@@ -43,3 +43,14 @@ where:
 		y ̂_i= predicts the probabilities.
 		N= number of samples.
 
+
+
+RESULT ANALYSIS using confusion matrix---->
+The confusion matrix provides an in-depth evaluation of the classification mod-el's performance. True positives (melanocytic nevi) stand out prominently, with 1195 samples correctly identified, highlighting the model's strong ability to de-tect melanocytic nevi accurately. Similarly, the true negatives (normal skin) showcase 586 correctly classified samples, demonstrating excellent performance in identifying normal skin. The model exhibits minimal error, with only one false positive, where a normal skin sample was misclassified as melanocytic nevi. Re-markably, there are no false negatives, indicating the model consistently identi-fied all melanocytic nevi without overlooking any cases. This performance re-flects the model's high precision, recall, and reliability in skin lesion classifica-tion tasks.
+![image](https://github.com/user-attachments/assets/5ff82ae1-7daa-4ba3-af7a-2c38a4a557d8)
+
+
+
+conclusion---->
+The ultimate research objective is to build a state-of-the-art application for non-invasive melanocytic nevi detection using computer vision and image processing,
+which would stand to be a global standard and be less expensive as compared to other traditional systems which are already in place for the same
