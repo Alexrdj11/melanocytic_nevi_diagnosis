@@ -47,7 +47,7 @@ The model was trained using binary cross-entropy loss, defined as Eq (3):
 where:
 		yi = true labels.
 		y ̂_i= predicts the probabilities.
-		N= number of samples.
+		N= number of samples. 
 
 
 
