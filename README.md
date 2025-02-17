@@ -1,3 +1,4 @@
+---ABSTRACT---
 One of the commonest skin disease Melanocytic nevi requires accurate and early diagnosis to ensure timely treatment. 
 Traditional diagnostic methods, which rely on visual inspections and biopsies, are invasive,
 time-consuming, and prone to human error. To address these challenges, we propose a deep learning-based system for efficient and automated classification of skin con-ditions. 
