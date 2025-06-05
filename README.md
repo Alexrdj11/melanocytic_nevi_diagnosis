@@ -61,3 +61,9 @@ The confusion matrix provides an in-depth evaluation of the classification mod-e
 conclusion---->
 The ultimate research objective is to build a state-of-the-art application for non-invasive melanocytic nevi detection using computer vision and image processing,
 which would stand to be a global standard and be less expensive as compared to other traditional systems which are already in place for the same
+
+
+
+## License
+
+This project is licensed under the [MIT License](./LICENSE).
