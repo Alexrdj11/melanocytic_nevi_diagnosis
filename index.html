@@ -3,9 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Skin Disease Prediction</title>
+    <title>Skin Disease Prediction - Demo</title>
     <script src="https://cdn.tailwindcss.com"></script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,22 +15,18 @@
       .font-hubot {
         font-family: "Funnel Display", serif;
       }
+      .result-hidden {
+        display: none;
+      }
+      .result-shown {
+        display: block;
+      }
     </style>
   </head>
 
   <body>
-    <!-- <h1 class="text-3xl font-bold">
-        Hello world!
-      </h1>
-    <h1>Skin Disease Classification</h1>
-    <form action="/upload" method="POST" enctype="multipart/form-data">
-        <label for="image">Choose an image file:</label>
-        <input type="file" id="image" name="image" accept="image/*" required>
-        <button type="submit">Upload and Predict</button>
-    </form> -->
-
-    <div class="bg-slate-950 container min-h-screen">
-      <h1 class="text-stone-300 text-5xl text-center font-hubot p-24">
+    <div class="bg-slate-950 min-h-screen px-4 py-8">
+      <h1 class="text-stone-300 text-3xl sm:text-4xl md:text-5xl text-center font-hubot px-4 py-8 md:p-24">
         Skin Disease Detection using Deep Learning
         <span
           class="mt-5 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-slate-500 relative inline-block"
@@ -39,46 +34,124 @@
           <span class="relative text-slate-950">Melanocytic Nevi</span>
         </span>
       </h1>
-      <div
-        class="w-4/12 h-2/5 bg-slate-500 rounded-lg mx-auto flex flex-col items-center justify-center text-center"
-      >
-        <form
-          action="/upload"
-          method="POST"
-          enctype="multipart/form-data"
-          class="flex flex-col items-center"
-        >
+      
+      <!-- Upload Section -->
+      <div id="upload-section" class="w-full max-w-md mx-auto bg-slate-500 rounded-lg flex flex-col items-center justify-center text-center p-8">
+        <form id="upload-form" class="flex flex-col items-center w-full">
           <label
-            class="text-slate-950 font-hubot text-4xl mb-10 mt-10"
+            class="text-slate-950 font-hubot text-2xl sm:text-3xl md:text-4xl mb-6 text-center"
             for="image"
           >
             Choose an image file:
           </label>
-          <!-- <input type="file" id="image" name="image" accept="image/*" required class="mb-2"> -->
+          
           <input
             type="file"
             id="image"
             name="image"
             accept="image/*"
             required
-            class="file:mr-3 file:py-3 file:px-4 file:border-0 border border-slate-950 rounded-full file:bg-slate-950 file:text-stone-300 hover:file:bg-slate-900"
+            class="file:mr-3 file:py-3 file:px-4 file:border-0 border border-slate-950 rounded-full file:bg-slate-950 file:text-stone-300 hover:file:bg-slate-900 w-full max-w-xs text-sm"
           />
+          
           <button
-            class="bg-slate-950 rounded-full px-10 py-4 mb-10 mt-10 text-stone-300"
             type="submit"
+            class="bg-slate-950 rounded-full px-8 py-4 mt-6 text-stone-300 hover:bg-slate-900 transition-colors font-hubot text-lg"
           >
             Upload and Predict
           </button>
         </form>
+        
+        <div class="mt-6 text-xs text-slate-950 text-center">
+          <p>Demo version - Random predictions for portfolio showcase</p>
+        </div>
+      </div>
+
+      <!-- Result Section -->
+      <div id="result-section" class="result-hidden max-w-md mx-auto bg-slate-500 rounded-lg p-8 mt-8">
+        <h2 class="text-slate-950 font-hubot text-2xl sm:text-3xl text-center mb-6">Prediction Result</h2>
+        
+        <div class="mb-6 text-center">
+          <img id="uploaded-image" alt="Uploaded image" class="w-full h-48 sm:h-64 object-cover rounded-lg mx-auto">
+        </div>
+        
+        <div class="text-center">
+          <p class="text-slate-950 font-hubot text-xl mb-2">
+            <span class="font-bold">Predicted Class:</span> 
+            <span id="prediction-class" class="text-slate-800"></span>
+          </p>
+          <p class="text-slate-950 font-hubot text-lg mb-6">
+            <span class="font-bold">Confidence:</span> 
+            <span id="prediction-confidence" class="text-slate-800"></span>
+          </p>
+          
+          <button
+            id="upload-another"
+            class="bg-slate-950 hover:bg-slate-900 text-stone-300 font-bold py-3 px-6 rounded-full transition-colors font-hubot"
+          >
+            Upload Another Image
+          </button>
+        </div>
+        
+        <div class="mt-6 text-xs text-slate-800 text-center font-hubot">
+          <p>This is a demo version with random predictions.</p>
+          <p>Portfolio showcase - Not for actual medical diagnosis.</p>
+        </div>
       </div>
     </div>
 
-    <!-- <div class="flex h-[100vh] w-[100vw] flex-col items-center justify-center bg-slate-950 text-white">
-        <div class="card-wrapper h-[200px] w-[200px]">
-          <div class="card-content flex items-center justify-center text-xs">
-            <div class="max-w-[60%] text-center">Check out <a href="https://youtube.com/@codinglyio" class="font-semibold underline" target="_blank">Codingly</a> on YouTube</div>
-          </div>
-        </div>
-      </div> -->
+    <script>
+      const uploadForm = document.getElementById('upload-form');
+      const imageInput = document.getElementById('image');
+      const uploadSection = document.getElementById('upload-section');
+      const resultSection = document.getElementById('result-section');
+      const uploadedImage = document.getElementById('uploaded-image');
+      const predictionClass = document.getElementById('prediction-class');
+      const predictionConfidence = document.getElementById('prediction-confidence');
+      const uploadAnother = document.getElementById('upload-another');
+
+      const classLabels = {0: 'Melanocytic_Nevi', 1: 'Normal_Skin'};
+
+      uploadForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const file = imageInput.files[0];
+        if (!file) {
+          alert('Please select an image file');
+          return;
+        }
+
+        // Display the uploaded image
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          uploadedImage.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+
+        // Generate random prediction for demo
+        const prediction = Math.random() * 0.8 + 0.1; // Random between 0.1 and 0.9
+        const predicted_class = prediction > 0.5 ? 1 : 0;
+        const confidence = predicted_class === 1 ? prediction : 1 - prediction;
+
+        // Display results
+        predictionClass.textContent = classLabels[predicted_class];
+        predictionConfidence.textContent = confidence.toFixed(2);
+
+        // Show result section, hide upload section
+        uploadSection.classList.add('result-hidden');
+        resultSection.classList.remove('result-hidden');
+        resultSection.classList.add('result-shown');
+      });
+
+      uploadAnother.addEventListener('click', function() {
+        // Reset form
+        uploadForm.reset();
+        
+        // Show upload section, hide result section
+        uploadSection.classList.remove('result-hidden');
+        resultSection.classList.add('result-hidden');
+        resultSection.classList.remove('result-shown');
+      });
+    </script>
   </body>
 </html>

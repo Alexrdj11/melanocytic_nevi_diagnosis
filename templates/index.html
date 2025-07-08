@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skin Disease Prediction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Funnel+Display:wght@300..800&family=Hubot+Sans:ital,wght@0,200..900;1,200..900&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .font-hubot {
+        font-family: "Funnel Display", serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="bg-slate-950 container min-h-screen px-4 py-8">
+      <h1 class="text-stone-300 text-3xl sm:text-4xl md:text-5xl text-center font-hubot px-4 py-8 md:p-24">
+        Skin Disease Detection using Deep Learning
+        <span
+          class="mt-5 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-slate-500 relative inline-block"
+        >
+          <span class="relative text-slate-950">Melanocytic Nevi</span>
+        </span>
+      </h1>
+
+      <div class="w-full max-w-md mx-auto bg-slate-500 rounded-lg flex flex-col items-center justify-center text-center p-8">
+        <form
+          action="/upload"
+          method="POST"
+          enctype="multipart/form-data"
+          class="flex flex-col items-center w-full"
+        >
+          <label
+            class="text-slate-950 font-hubot text-2xl sm:text-3xl md:text-4xl mb-6 text-center"
+            for="image"
+          >
+            Choose an image file:
+          </label>
+
+          <input
+            type="file"
+            id="image"
+            name="image"
+            accept="image/*"
+            required
+            class="file:mr-3 file:py-3 file:px-4 file:border-0 border border-slate-950 rounded-full file:bg-slate-950 file:text-stone-300 hover:file:bg-slate-900 w-full max-w-xs text-sm"
+          />
+
+          <button
+            class="bg-slate-950 rounded-full px-8 py-4 mt-6 text-stone-300 hover:bg-slate-900 transition-colors font-hubot text-lg"
+            type="submit"
+          >
+            Upload and Predict
+          </button>
+        </form>
+
+        <div class="mt-6 text-xs text-slate-950 text-center">
+          <p>Demo version - Random predictions for portfolio showcase</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
