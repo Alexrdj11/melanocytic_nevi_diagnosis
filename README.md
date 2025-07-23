@@ -1,4 +1,4 @@
-# Automated Classification of Melanocytic Nevi Using Deep Learning
+#Melanocytic Nevi Classification Using Deep Learning
 
 ## Abstract
 
