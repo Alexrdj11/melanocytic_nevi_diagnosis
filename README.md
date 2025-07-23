@@ -1,4 +1,4 @@
-#Melanocytic Nevi Classification Using Deep Learning
+# Melanocytic Nevi Classification Using Transfer Learning
 
 ## Abstract
 
